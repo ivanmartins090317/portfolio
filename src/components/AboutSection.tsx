@@ -1,12 +1,19 @@
-
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import {Card} from "@/components/ui/card";
+import {Badge} from "@/components/ui/badge";
 
 export function AboutSection() {
   const skills = [
-    "React", "Next.js", "TypeScript", "Node.js", "Python", 
-    "PostgreSQL", "MongoDB", "AWS", "Docker", "Git"
-  ]
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "Python",
+    "PostgreSQL",
+    "MongoDB",
+    "AWS",
+    "Docker",
+    "Git"
+  ];
 
   return (
     <section id="about" className="py-20">
@@ -19,19 +26,19 @@ export function AboutSection() {
             </h2>
             <div className="space-y-6 text-lg text-muted-foreground">
               <p>
-                Sou um desenvolvedor apaixonado por tecnologia com mais de 3 anos de experiência 
-                criando soluções web inovadoras. Especializo-me em desenvolvimento full-stack 
-                usando tecnologias modernas como React, Node.js e TypeScript.
+                Sou um desenvolvedor apaixonado por tecnologia com mais de 5 anos de
+                experiência criando soluções web inovadoras. Especializo-me em
+                desenvolvimento full-stack usando tecnologias modernas como React, Node.js
+                e TypeScript.
               </p>
               <p>
-                Minha jornada começou com curiosidade sobre como os sites funcionam e evoluiu 
-                para uma carreira focada em criar experiências digitais que fazem a diferença 
-                na vida das pessoas.
+                Possuo certificações em AWS Cloud e Scrum, o que reforça minha capacidade
+                de entregar soluções escaláveis e eficientes.
               </p>
               <p>
-                Quando não estou codificando, gosto de contribuir para projetos open source, 
-                aprender novas tecnologias e compartilhar conhecimento com a comunidade de 
-                desenvolvedores.
+                Quando não estou codificando, gosto de contribuir para projetos open
+                source, aprender novas tecnologias e compartilhar conhecimento com a
+                comunidade de desenvolvedores.
               </p>
             </div>
           </Card>
@@ -41,9 +48,9 @@ export function AboutSection() {
             <h3 className="text-2xl font-bold mb-6">Habilidades</h3>
             <div className="flex flex-wrap gap-2">
               {skills.map((skill, index) => (
-                <Badge 
-                  key={skill} 
-                  variant="secondary" 
+                <Badge
+                  key={skill}
+                  variant="secondary"
                   className="hover:scale-105 transition-transform duration-200"
                   style={{
                     animationDelay: `${index * 100}ms`
@@ -61,13 +68,19 @@ export function AboutSection() {
             <div className="space-y-4">
               <div className="border-l-2 border-blue-500 pl-4">
                 <h4 className="font-semibold">Desenvolvedor Full Stack</h4>
-                <p className="text-sm text-muted-foreground">Tech Company • 2022 - Presente</p>
-                <p className="text-sm mt-2">Desenvolvimento de aplicações web complexas usando React e Node.js</p>
+                <p className="text-sm text-muted-foreground">
+                  Tech Company • 2022 - Presente
+                </p>
+                <p className="text-sm mt-2">
+                  Desenvolvimento de aplicações web complexas usando React e Node.js
+                </p>
               </div>
               <div className="border-l-2 border-purple-500 pl-4">
                 <h4 className="font-semibold">Desenvolvedor Frontend</h4>
                 <p className="text-sm text-muted-foreground">Startup • 2021 - 2022</p>
-                <p className="text-sm mt-2">Criação de interfaces modernas e responsivas</p>
+                <p className="text-sm mt-2">
+                  Criação de interfaces modernas e responsivas
+                </p>
               </div>
             </div>
           </Card>
@@ -78,12 +91,18 @@ export function AboutSection() {
             <div className="space-y-4">
               <div className="border-l-2 border-green-500 pl-4">
                 <h4 className="font-semibold">Ciência da Computação</h4>
-                <p className="text-sm text-muted-foreground">Universidade Federal • 2018 - 2022</p>
-                <p className="text-sm mt-2">Bacharelado com foco em desenvolvimento web e mobile</p>
+                <p className="text-sm text-muted-foreground">
+                  Universidade Federal • 2018 - 2022
+                </p>
+                <p className="text-sm mt-2">
+                  Bacharelado com foco em desenvolvimento web e mobile
+                </p>
               </div>
               <div className="border-l-2 border-orange-500 pl-4">
                 <h4 className="font-semibold">Certificações</h4>
-                <p className="text-sm text-muted-foreground">Várias Plataformas • 2020 - Presente</p>
+                <p className="text-sm text-muted-foreground">
+                  Várias Plataformas • 2020 - Presente
+                </p>
                 <p className="text-sm mt-2">AWS, Google Cloud, React Advanced</p>
               </div>
             </div>
@@ -91,5 +110,5 @@ export function AboutSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
