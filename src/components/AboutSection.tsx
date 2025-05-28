@@ -67,17 +67,17 @@ export function AboutSection() {
             <h3 className="text-2xl font-bold mb-6">Experiência</h3>
             <div className="space-y-4">
               <div className="border-l-2 border-blue-500 pl-4">
-                <h4 className="font-semibold">Desenvolvedor Full Stack</h4>
+                <h4 className="font-semibold">Desenvolvedor Front-end</h4>
                 <p className="text-sm text-muted-foreground">
-                  Tech Company • 2022 - Presente
+                  Fast Shop S/A • 2024 - 2025
                 </p>
                 <p className="text-sm mt-2">
-                  Desenvolvimento de aplicações web complexas usando React e Node.js
+                  Desenvolvimento de aplicações web complexas usando React
                 </p>
               </div>
               <div className="border-l-2 border-purple-500 pl-4">
-                <h4 className="font-semibold">Desenvolvedor Frontend</h4>
-                <p className="text-sm text-muted-foreground">Startup • 2021 - 2022</p>
+                <h4 className="font-semibold">Engenharo de Software</h4>
+                <p className="text-sm text-muted-foreground">Consultoria • 2021 - 2023</p>
                 <p className="text-sm mt-2">
                   Criação de interfaces modernas e responsivas
                 </p>
@@ -90,20 +90,18 @@ export function AboutSection() {
             <h3 className="text-2xl font-bold mb-6">Educação</h3>
             <div className="space-y-4">
               <div className="border-l-2 border-green-500 pl-4">
-                <h4 className="font-semibold">Ciência da Computação</h4>
+                <h4 className="font-semibold">Engenharia Mecatrônica</h4>
                 <p className="text-sm text-muted-foreground">
-                  Universidade Federal • 2018 - 2022
+                  Universidade Paulista • 2014 - 2020
                 </p>
-                <p className="text-sm mt-2">
-                  Bacharelado com foco em desenvolvimento web e mobile
-                </p>
+                <p className="text-sm mt-2">Bacharelado em Engenharia Mecatrônica</p>
               </div>
               <div className="border-l-2 border-orange-500 pl-4">
                 <h4 className="font-semibold">Certificações</h4>
                 <p className="text-sm text-muted-foreground">
-                  Várias Plataformas • 2020 - Presente
+                  Várias Plataformas • 2023 - Presente
                 </p>
-                <p className="text-sm mt-2">AWS, Google Cloud, React Advanced</p>
+                <p className="text-sm mt-2"> AWS Cloud Practitioner</p>
               </div>
             </div>
           </Card>
