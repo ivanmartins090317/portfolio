@@ -1,13 +1,9 @@
-
-"use client"
-
-import * as React from "react"
-import { useTheme } from "next-themes"
-import { Button } from "@/components/ui/button"
-import { Settings } from "lucide-react"
+import {useTheme} from "next-themes";
+import {Button} from "@/components/ui/button";
+import {Settings} from "lucide-react";
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const {theme, setTheme} = useTheme();
 
   return (
     <Button
@@ -20,5 +16,5 @@ export function ThemeToggle() {
       <Settings className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
       <span className="sr-only">Toggle theme</span>
     </Button>
-  )
+  );
 }
