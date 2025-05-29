@@ -1,4 +1,3 @@
-
 export function Footer() {
   return (
     <footer className="bg-muted/50 py-8">
@@ -6,14 +5,14 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <h3 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Dev.Portfolio
+              Ivan Martins.Dev
             </h3>
             <p className="text-muted-foreground">Criando o futuro, um código por vez.</p>
           </div>
-          
+
           <div className="text-center md:text-right">
             <p className="text-muted-foreground">
-              © 2024 Dev.Portfolio. Todos os direitos reservados.
+              © 2025 Ivan Martins.Dev. Todos os direitos reservados.
             </p>
             <p className="text-sm text-muted-foreground">
               Desenvolvido com ❤️ usando React e Tailwind CSS
@@ -22,5 +21,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
