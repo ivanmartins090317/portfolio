@@ -49,7 +49,7 @@ export function HeroSection() {
           </Card>
 
           {/* Profile Image Card */}
-          <Card className="flex md:col-span-4 p-6 hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/30 dark:to-purple-950/30 border-0">
+          <Card className="flex h-[60vh] md:h-auto md:col-span-4 p-6 hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/30 dark:to-purple-950/30 border-0">
             <div className="flex mx-auto items-center aspect-square relative overflow-hidden rounded-lg  ">
               <div className="absolute inset-0 flex items-center justify-center">
                 {/* <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-4xl font-bold">
