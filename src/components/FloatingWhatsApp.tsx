@@ -1,27 +1,26 @@
+"use client";
 
-"use client"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { MessageSquare } from "lucide-react"
-import { 
+import {useState} from "react";
+import {Button} from "@/components/ui/button";
+import {MessageSquare} from "lucide-react";
+import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+  TooltipTrigger
+} from "@/components/ui/tooltip";
 
 export const FloatingWhatsApp = () => {
-  const [isHovered, setIsHovered] = useState(false)
-  const phoneNumber = "5511999999999" // Replace with your actual WhatsApp number
-  const message = "Olá! Vi seu portfólio e gostaria de conversar."
-  
+  const [isHovered, setIsHovered] = useState(false);
+  const phoneNumber = "13981400137";
+  const message = "Olá! Vi seu portfólio e gostaria de conversar.";
+
   const handleClick = () => {
     window.open(
       `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
       "_blank"
-    )
-  }
+    );
+  };
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
@@ -47,6 +46,5 @@ export const FloatingWhatsApp = () => {
         </Tooltip>
       </TooltipProvider>
     </div>
-  )
-}
-
+  );
+};
