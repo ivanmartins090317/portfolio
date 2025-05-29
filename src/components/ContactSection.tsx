@@ -1,40 +1,39 @@
+"use client";
 
-"use client"
-
-import { useState } from "react"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { toast } from "@/hooks/use-toast"
-import { Mail, User, Contact } from "lucide-react"
+import {useState} from "react";
+import {Card} from "@/components/ui/card";
+import {Button} from "@/components/ui/button";
+import {Input} from "@/components/ui/input";
+import {Textarea} from "@/components/ui/textarea";
+import {Label} from "@/components/ui/label";
+import {toast} from "@/hooks/use-toast";
+import {Mail, User, Contact} from "lucide-react";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
+    name: "",
+    email: "",
+    message: ""
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    
+    e.preventDefault();
+
     // Simulate form submission
     toast({
       title: "Mensagem enviada!",
       description: "Obrigado pelo contato. Responderei em breve!"
-    })
-    
-    setFormData({ name: '', email: '', message: '' })
-  }
+    });
+
+    setFormData({name: "", email: "", message: ""});
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    })
-  }
+    });
+  };
 
   return (
     <section id="contact" className="py-20">
@@ -47,8 +46,8 @@ export function ContactSection() {
                 Vamos Trabalhar Juntos
               </h2>
               <p className="text-xl text-muted-foreground">
-                Tem um projeto em mente? Vamos conversar sobre como posso ajudar 
-                a transformar suas ideias em realidade.
+                Tem um projeto em mente? Vamos conversar sobre como posso ajudar a
+                transformar suas ideias em realidade.
               </p>
             </div>
 
@@ -60,7 +59,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Email</h4>
-                    <p className="text-muted-foreground">contato@dev.portfolio</p>
+                    <p className="text-muted-foreground">ivanmartins.ilha@gmail.com</p>
                   </div>
                 </div>
               </Card>
@@ -72,7 +71,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Telefone</h4>
-                    <p className="text-muted-foreground">+55 (11) 99999-9999</p>
+                    <p className="text-muted-foreground">+55 (13) 98140-0137</p>
                   </div>
                 </div>
               </Card>
@@ -84,7 +83,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Localização</h4>
-                    <p className="text-muted-foreground">São Paulo, Brasil</p>
+                    <p className="text-muted-foreground">Santos, São Paulo, Brasil</p>
                   </div>
                 </div>
               </Card>
@@ -121,7 +120,7 @@ export function ContactSection() {
                   />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="message">Mensagem</Label>
                 <Textarea
@@ -136,9 +135,9 @@ export function ContactSection() {
                 />
               </div>
 
-              <Button 
-                type="submit" 
-                size="lg" 
+              <Button
+                type="submit"
+                size="lg"
                 className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105"
               >
                 Enviar Mensagem
@@ -148,5 +147,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
