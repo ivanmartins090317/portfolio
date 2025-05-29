@@ -76,7 +76,7 @@ export function AboutSection() {
                 </p>
               </div>
               <div className="border-l-2 border-purple-500 pl-4">
-                <h4 className="font-semibold">Engenharo de Software</h4>
+                <h4 className="font-semibold">Engenheiro de Software</h4>
                 <p className="text-sm text-muted-foreground">Consultoria • 2021 - 2023</p>
                 <p className="text-sm mt-2">
                   Criação de interfaces modernas e responsivas

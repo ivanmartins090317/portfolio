@@ -17,7 +17,7 @@ export function HeroSection() {
           <Card className="h-[57vh] md:col-span-8 p-8 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/30 dark:to-purple-950/30 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="flex flex-col justify-center h-full space-y-6 ">
               <div>
-                <h2 className="text-5xl md:text-6xl font-bold mb-4">
+                <h2 className="text-4xl md:text-6xl font-bold mb-4">
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     Desenvolvedor
                   </span>
