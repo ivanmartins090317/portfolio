@@ -33,15 +33,15 @@ export function ProjectsSection() {
       link: "https://surf-board-mesure.vercel.app/"
     },
     {
-      title: "Social Media App",
+      title: "Landing page",
       description:
-        "Rede social com feed personalizado, sistema de mensagens e compartilhamento de mídia.",
-      technologies: ["React Native", "Firebase", "Redux", "AWS"],
-      image: "bg-gradient-to-br from-orange-500 to-red-500",
-      link: "#"
+        "Landing page personalizada para advogados, sistema de mensagens e compartilhamento de mídia.",
+      technologies: ["React", "Tailwind", "Shadcn", "typescript"],
+      image: "https://i.ibb.co/jZRV9QFT/landing-page-moraes.png",
+      link: "https://advogado-moraes.vercel.app/ "
     }
   ];
-  console.log(projects[1].link);
+  console.log(projects[3].image);
 
   const handleClickLink = (link) => {
     // Link externo para onde você deseja direcionar
@@ -144,11 +144,16 @@ export function ProjectsSection() {
           <Card className="lg:col-span-12 p-6 hover:scale-105 transition-transform duration-300">
             <div className="grid md:grid-cols-4 gap-6 items-center">
               <div
-                className={`${projects[3].image} h-32 rounded flex items-center justify-center`}
+                className={`${projects[3].image} h-32 rounded flex flex-col items-center justify-center`}
               >
-                <div className="text-white text-3xl font-bold opacity-30">
+                <img
+                  className="w-[100%] h-full object-cover"
+                  src={`${projects[3].image}`}
+                  alt=""
+                />
+                {/* <div className="text-white text-3xl font-bold opacity-30">
                   {projects[3].title.split(" ")[0]}
-                </div>
+                </div> */}
               </div>
               <div className="md:col-span-2">
                 <h3 className="text-xl font-bold mb-2">{projects[3].title}</h3>
@@ -162,7 +167,12 @@ export function ProjectsSection() {
                 </div>
               </div>
               <div className="flex flex-col gap-2">
-                <Button className="w-full">Ver Projeto</Button>
+                <Button
+                  className="w-full"
+                  onClick={() => handleClickLink("https://advogado-moraes.vercel.app/")}
+                >
+                  Ver Projeto
+                </Button>
                 <Button variant="outline" className="w-full">
                   Código Fonte
                 </Button>
