@@ -9,6 +9,13 @@ export function HeroSection() {
     link.click();
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({behavior: "smooth"});
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen pt-16 pb-0">
       <div className="container mx-auto px-4">
@@ -33,6 +40,7 @@ export function HeroSection() {
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+                  onClick={() => scrollToSection("projects")}
                 >
                   Ver Projetos
                 </Button>
