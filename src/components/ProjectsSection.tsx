@@ -11,7 +11,7 @@ export function ProjectsSection() {
       description:
         "Plataforma de e-commerce com link direto para o WhatsApp do vendedor, facilitando a compra do produto.",
       technologies: ["React", "Node.js", "PostgreSQL", "Tailwind"],
-      image: "https://i.ibb.co/kskhjL4Z/ecomerce-reage.png",
+      image: "https://i.ibb.co/KjSPLYhd/projeto-reage-preview.png",
       link: "https://reage-surfboard.vercel.app/"
     },
     {
@@ -19,8 +19,7 @@ export function ProjectsSection() {
       description:
         "Aplicativo para gerenciamento e avaliação de surfistas em competições ou baterias de surfe.",
       technologies: ["Next.js", "TypeScript", "MongoDB", "Tailwind"],
-      image:
-        "https://i.ibb.co/4gXXrBM5/screencapture-juiz-surf-br-vercel-app-training-heat-2025-05-28-20-23-58.png",
+      image: "https://i.ibb.co/HThr14DL/projeto-surf-juiz-preview.png",
       link: "https://juiz-surf-br.vercel.app/"
     },
     {
