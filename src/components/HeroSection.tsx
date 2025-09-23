@@ -1,8 +1,48 @@
 import {Button} from "@/components/ui/button";
 import {Card} from "@/components/ui/card";
-import Orb from "./Orb";
+import Orb from "../animation/components/Orb";
+import DecryptedText from "../animation/components/DecryptedText";
+import CountUp from "@/animation/components/CountUp";
 
 export function HeroSection() {
+  const statsData = [
+    {
+      value: 50,
+      suffix: "+",
+      label: "Projetos Concluídos",
+      color: "text-blue-600"
+    },
+    {
+      value: 5,
+      suffix: "+",
+      label: "Anos de Experiência",
+      color: "text-purple-600"
+    },
+    {
+      value: 100,
+      suffix: "%",
+      label: "Clientes Satisfeitos",
+      color: "text-green-600"
+    },
+    {
+      value: 24,
+      suffix: "/5",
+      label: "Suporte Disponível",
+      color: "text-orange-600"
+    }
+  ];
+  const countUpAnimation = (number: number) => {
+    return (
+      <CountUp
+        from={0}
+        to={number}
+        separator=","
+        direction="up"
+        duration={1}
+        className="count-up-text"
+      />
+    );
+  };
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = "./CV_IvanMartins.pdf";
@@ -34,7 +74,10 @@ export function HeroSection() {
                     Desenvolvedor
                   </span>
                   <br />
-                  <span className="text-foreground">Full Stack</span>
+                  <DecryptedText
+                    className="text-foreground"
+                    text="Full Stack"
+                  ></DecryptedText>
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-2xl">
                   Criando experiências digitais incríveis com tecnologias modernas.
@@ -76,33 +119,55 @@ export function HeroSection() {
           </Card>
 
           {/* Stats Cards */}
-          <Card className="md:col-span-3 p-6 hover:scale-105 transition-transform duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
+          {statsData.map((stat, index) => (
+            <Card
+              key={index}
+              className="md:col-span-3 p-6 hover:scale-105 transition-transform duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm"
+            >
+              <div className="text-center">
+                <h3 className={`text-3xl font-bold ${stat.color}`}>
+                  {countUpAnimation(stat.value)}
+                  {stat.suffix}
+                </h3>
+                <p className="text-muted-foreground">{stat.label}</p>
+              </div>
+            </Card>
+          ))}
+          {/* <Card className="md:col-span-3 p-6 hover:scale-105 transition-transform duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
             <div className="text-center">
-              <h3 className="text-3xl font-bold text-blue-600">50+</h3>
+              <h3 className="text-3xl font-bold text-blue-600">
+                {countUpAnimation(50)}+
+              </h3>
               <p className="text-muted-foreground">Projetos Concluídos</p>
             </div>
           </Card>
 
           <Card className="md:col-span-3 p-6 hover:scale-105 transition-transform duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
             <div className="text-center">
-              <h3 className="text-3xl font-bold text-purple-600">5+</h3>
+              <h3 className="text-3xl font-bold text-purple-600">
+                {countUpAnimation(5)}+
+              </h3>
               <p className="text-muted-foreground">Anos de Experiência</p>
             </div>
           </Card>
 
           <Card className="md:col-span-3 p-6 hover:scale-105 transition-transform duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
             <div className="text-center">
-              <h3 className="text-3xl font-bold text-green-600">100%</h3>
+              <h3 className="text-3xl font-bold text-green-600">
+                {countUpAnimation(100)}%
+              </h3>
               <p className="text-muted-foreground">Clientes Satisfeitos</p>
             </div>
           </Card>
 
           <Card className="md:col-span-3 p-6 hover:scale-105 transition-transform duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
             <div className="text-center">
-              <h3 className="text-3xl font-bold text-orange-600">24/5</h3>
+              <h3 className="text-3xl font-bold text-orange-600">
+                {countUpAnimation(24)}/5
+              </h3>
               <p className="text-muted-foreground">Suporte Disponível</p>
             </div>
-          </Card>
+          </Card> */}
         </div>
       </div>
     </section>
