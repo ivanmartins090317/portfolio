@@ -133,41 +133,6 @@ export function HeroSection() {
               </div>
             </Card>
           ))}
-          {/* <Card className="md:col-span-3 p-6 hover:scale-105 transition-transform duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
-            <div className="text-center">
-              <h3 className="text-3xl font-bold text-blue-600">
-                {countUpAnimation(50)}+
-              </h3>
-              <p className="text-muted-foreground">Projetos Concluídos</p>
-            </div>
-          </Card>
-
-          <Card className="md:col-span-3 p-6 hover:scale-105 transition-transform duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
-            <div className="text-center">
-              <h3 className="text-3xl font-bold text-purple-600">
-                {countUpAnimation(5)}+
-              </h3>
-              <p className="text-muted-foreground">Anos de Experiência</p>
-            </div>
-          </Card>
-
-          <Card className="md:col-span-3 p-6 hover:scale-105 transition-transform duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
-            <div className="text-center">
-              <h3 className="text-3xl font-bold text-green-600">
-                {countUpAnimation(100)}%
-              </h3>
-              <p className="text-muted-foreground">Clientes Satisfeitos</p>
-            </div>
-          </Card>
-
-          <Card className="md:col-span-3 p-6 hover:scale-105 transition-transform duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
-            <div className="text-center">
-              <h3 className="text-3xl font-bold text-orange-600">
-                {countUpAnimation(24)}/5
-              </h3>
-              <p className="text-muted-foreground">Suporte Disponível</p>
-            </div>
-          </Card> */}
         </div>
       </div>
     </section>
