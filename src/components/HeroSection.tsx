@@ -1,138 +1,157 @@
-import {Button} from "@/components/ui/button";
-import {Card} from "@/components/ui/card";
-import Orb from "../animation/components/Orb";
-import DecryptedText from "../animation/components/DecryptedText";
-import CountUp from "@/animation/components/CountUp";
+import {ArrowRight} from "lucide-react";
+
+const techList = [
+  {label: "React", number: "01"},
+  {label: "Node.js", number: "02"},
+  {label: "TypeScript", number: "03"},
+  {label: "Next.js", number: "04"},
+  {label: "Expo", number: "05"},
+  {label: "PostgreSQL", number: "06"},
+  {label: "AWS", number: "07"}
+];
+
+const stackItems = ["Projetos", "Frontend", "Backend", "APIs", "Cloud", "Mobile"];
+
+const stats = [
+  {badge: "01", value: "50+", label: "Projetos Concluídos"},
+  {badge: "02", value: "5+", label: "Anos de Experiência"}
+];
 
 export function HeroSection() {
-  const statsData = [
-    {
-      value: 50,
-      suffix: "+",
-      label: "Projetos Concluídos",
-      color: "text-blue-600"
-    },
-    {
-      value: 5,
-      suffix: "+",
-      label: "Anos de Experiência",
-      color: "text-purple-600"
-    },
-    {
-      value: 100,
-      suffix: "%",
-      label: "Clientes Satisfeitos",
-      color: "text-green-600"
-    },
-    {
-      value: 24,
-      suffix: "/5",
-      label: "Suporte Disponível",
-      color: "text-orange-600"
-    }
-  ];
-  const countUpAnimation = (number: number) => {
-    return (
-      <CountUp
-        from={0}
-        to={number}
-        separator=","
-        direction="up"
-        duration={1}
-        className="count-up-text"
-      />
-    );
-  };
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "./CV_IvanMartins.pdf";
-    link.download = "CV_IvanMartins.pdf";
-    link.click();
-  };
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({behavior: "smooth"});
-    }
+    if (element) element.scrollIntoView({behavior: "smooth"});
   };
 
   return (
-    <section id="home" className="min-h-screen pt-16 pb-0 relative">
-      {/* Orb Background Effect - Fixo no fundo */}
-      <div className="fixed inset-0 -z-09 pointer-events-none opacity-30">
-        <Orb hoverIntensity={0.3} rotateOnHover={true} hue={0} forceHoverState={false} />
-      </div>
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-full">
-          {/* Main Hero Card */}
-          <Card className="h-[57vh] md:col-span-8 p-8 bg-gradient-to-br from-blue-50/90 to-purple-50/90 dark:from-blue-950/80 dark:to-purple-950/80 border-0 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm">
-            <div className="flex flex-col justify-center h-full space-y-6 ">
-              <div>
-                <h2 className="text-4xl md:text-6xl font-bold mb-4">
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    Desenvolvedor
-                  </span>
-                  <br />
-                  <DecryptedText
-                    className="text-foreground"
-                    text="Full Stack"
-                  ></DecryptedText>
-                </h2>
-                <p className="text-xl text-muted-foreground max-w-2xl">
-                  Criando experiências digitais incríveis com tecnologias modernas.
-                  Especializado em React, Node.js e desenvolvimento web responsivo.
-                </p>
+    <section id="home" className="pt-32 pb-20">
+      <div className="max-w-[1440px] mx-auto px-6">
+        {/* Hero Header Grid */}
+        <div className="grid grid-cols-12 gap-8 mb-12">
+          {/* Left Title */}
+          <div className="col-span-12 lg:col-span-10">
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-wrap items-center gap-4">
+                <h1 className="text-6xl md:text-8xl font-semibold tracking-tight leading-none text-neutral-900 dark:text-white">
+                  Desenvolvedor
+                </h1>
+                <div className="h-16 w-32 md:h-20 md:w-48 rounded-full overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+                  <img
+                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=400"
+                    className="w-full h-full object-cover grayscale opacity-80"
+                    alt="Code"
+                  />
+                </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="h-16 w-32 md:h-20 md:w-48 rounded-full overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+                  <img
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=400"
+                    className="w-full h-full object-cover grayscale opacity-80"
+                    alt="Tech"
+                  />
+                </div>
+                <h1 className="text-6xl md:text-8xl font-semibold tracking-tight leading-none text-neutral-900 dark:text-white">
+                  Full Stack
+                </h1>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4">
+                <h1 className="text-6xl md:text-8xl font-semibold tracking-tight leading-none text-neutral-400">
+                  Ivan Martins
+                </h1>
+              </div>
+
+              <p className="text-lg text-neutral-500 dark:text-neutral-400 max-w-2xl mt-4 leading-relaxed">
+                Engenheiro de software especializado em React, Node.js e TypeScript.
+                Construindo soluções escaláveis e experiências digitais de alta qualidade.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Tech List */}
+          <div className="hidden lg:flex col-span-2 flex-col items-end justify-center text-sm font-medium text-neutral-400 gap-3">
+            {techList.map((tech, i) => (
+              <div
+                key={tech.label}
+                className={`flex justify-between w-full max-w-[180px] ${i === 0 ? "text-neutral-900 dark:text-white" : ""}`}
+              >
+                <span>{tech.label}</span>
+                <span>{tech.number}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Hero Content Grid */}
+        <div className="grid grid-cols-12 gap-6 items-end">
+          {/* Left Stats Sidebar */}
+          <div className="col-span-12 lg:col-span-2 flex flex-col gap-10">
+            <div>
+              <h3 className="font-semibold text-lg leading-tight mb-4 text-neutral-900 dark:text-white">
+                Minhas
+                <br />
+                habilidades
+              </h3>
+              <div className="border border-neutral-200 dark:border-neutral-700 rounded-3xl p-5 bg-white dark:bg-neutral-900 shadow-sm relative overflow-hidden">
+                <ul className="space-y-3 text-sm text-neutral-400">
+                  {stackItems.map((item, i) => (
+                    <li
+                      key={item}
+                      className={
+                        i === 0 ? "text-neutral-900 dark:text-white font-medium" : ""
+                      }
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-700 text-xs text-neutral-500 leading-tight">
+                  Crie projetos, tecnologias e resultados reais.
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              {stats.map((stat) => (
+                <div key={stat.badge}>
+                  <span className="inline-block bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-xs px-2 py-0.5 rounded-full mb-1">
+                    {stat.badge}
+                  </span>
+                  <div className="text-4xl font-medium tracking-tight text-neutral-900 dark:text-white">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm font-medium text-neutral-500 mt-1">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Main Image */}
+          <div className="col-span-12 lg:col-span-10 relative">
+            <div className="w-full h-[500px] md:h-[600px] rounded-[2.5rem] overflow-hidden relative bg-neutral-100 dark:bg-neutral-800">
+              <img
+                src="./preto_branco_02.jpeg"
+                alt="Ivan Martins"
+                className="w-full h-full object-cover object-top"
+              />
+
+              <div className="absolute bottom-8 right-8">
+                <button
                   onClick={() => scrollToSection("projects")}
+                  className="group flex items-center gap-3 bg-neutral-900 text-white pl-6 pr-2 py-2 rounded-full font-medium hover:bg-neutral-800 transition-all"
                 >
                   Ver Projetos
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="hover:scale-105 transition-transform duration-300"
-                  onClick={handleDownload}
-                >
-                  Download CV
-                </Button>
+                  <div className="bg-white/20 p-2 rounded-full group-hover:bg-white/30 transition-colors flex items-center justify-center">
+                    <ArrowRight className="h-4 w-4 text-white" />
+                  </div>
+                </button>
               </div>
             </div>
-          </Card>
-
-          {/* Profile Image Card */}
-          <Card className="flex h-[60vh] md:h-auto md:col-span-4 p-6 hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-blue-50/90 to-purple-50/90 dark:from-blue-950/80 dark:to-purple-950/80 border-0 backdrop-blur-sm">
-            <div className="flex mx-auto items-center aspect-square relative overflow-hidden rounded-lg  ">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <img
-                  src="./preto_branco_02.jpeg"
-                  alt="imagem de perfil"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500 to-purple-500 opacity-15"></div>
-              </div>
-            </div>
-          </Card>
-
-          {/* Stats Cards */}
-          {statsData.map((stat, index) => (
-            <Card
-              key={index}
-              className="md:col-span-3 p-6 hover:scale-105 transition-transform duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm"
-            >
-              <div className="text-center">
-                <h3 className={`text-3xl font-bold ${stat.color}`}>
-                  {countUpAnimation(stat.value)}
-                  {stat.suffix}
-                </h3>
-                <p className="text-muted-foreground">{stat.label}</p>
-              </div>
-            </Card>
-          ))}
+          </div>
         </div>
       </div>
     </section>

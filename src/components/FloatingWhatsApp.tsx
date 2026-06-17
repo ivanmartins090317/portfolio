@@ -1,17 +1,22 @@
 "use client";
 
-import {useState} from "react";
-import {Button} from "@/components/ui/button";
-import {MessageSquare} from "lucide-react";
+import { useState } from "react";
+import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
+import { MessageSquare } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger
+  TooltipTrigger,
 } from "@/components/ui/tooltip";
 
 export const FloatingWhatsApp = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const { resolvedTheme } = useTheme();
+
+  const isDark = resolvedTheme === "dark";
+
   const phoneNumber = "13981400137";
   const message = "Olá! Vi seu portfólio e gostaria de conversar.";
 
@@ -32,15 +37,25 @@ export const FloatingWhatsApp = () => {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               size="icon"
-              className={`rounded-full w-14 h-14 bg-green-500 hover:bg-green-600 shadow-lg transition-all duration-300 ${
-                isHovered ? "scale-110" : ""
-              }`}
+              style={{
+                backgroundColor: isDark ? "#131315" : "#ffffff",
+                border: isDark ? "1.5px solid #404040" : "1.5px solid #171717",
+                color: isDark ? "#f5f5f5" : "#171717",
+                transform: isHovered ? "scale(1.1)" : "scale(1)",
+              }}
+              className="rounded-full w-14 h-14 shadow-lg transition-all duration-300"
             >
-              <MessageSquare className="h-6 w-6 text-white" />
+              <MessageSquare className="h-6 w-6" />
               <span className="sr-only">WhatsApp Contact</span>
             </Button>
           </TooltipTrigger>
-          <TooltipContent className="bg-green-500 text-white border-green-600">
+          <TooltipContent
+            style={{
+              backgroundColor: isDark ? "#1b1b1d" : "#171717",
+              color: "#f5f5f5",
+              border: "none",
+            }}
+          >
             <p>Fale comigo no WhatsApp</p>
           </TooltipContent>
         </Tooltip>

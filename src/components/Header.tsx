@@ -1,57 +1,56 @@
-"use client";
+import { ArrowRight } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
-import {ThemeToggle} from "./ThemeToggle";
-import {Button} from "@/components/ui/button";
+const navLinks = [
+  { label: "Home", section: "home" },
+  { label: "Sobre", section: "about" },
+  { label: "Projetos", section: "projects" },
+  { label: "Contato", section: "contact" },
+];
 
 export function Header() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({behavior: "smooth"});
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/30">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+    <header className="fixed top-0 w-full bg-white/90 dark:bg-neutral-950/90 backdrop-blur-md z-50 border-b border-neutral-100 dark:border-neutral-800">
+      <div className="max-w-[1440px] mx-auto px-6 py-5 flex items-center justify-between">
+        <div className="flex items-center gap-12">
+          <button
+            onClick={() => scrollToSection("home")}
+            className="text-xl font-semibold tracking-tight uppercase text-neutral-900 dark:text-white"
+          >
             Ivan Martins.Dev
-          </h1>
+          </button>
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-500">
+            {navLinks.map((link) => (
+              <button
+                key={link.section}
+                onClick={() => scrollToSection(link.section)}
+                className="hover:text-neutral-900 dark:hover:text-white transition-colors first:text-neutral-900 dark:first:text-white"
+              >
+                {link.label}
+              </button>
+            ))}
+          </nav>
         </div>
 
-        <nav className="hidden md:flex items-center space-x-6">
-          <Button
-            variant="ghost"
-            onClick={() => scrollToSection("home")}
-            className="hover:text-primary transition-colors"
-          >
-            Home
-          </Button>
-          <Button
-            variant="ghost"
-            onClick={() => scrollToSection("about")}
-            className="hover:text-primary transition-colors"
-          >
-            Sobre
-          </Button>
-          <Button
-            variant="ghost"
-            onClick={() => scrollToSection("projects")}
-            className="hover:text-primary transition-colors"
-          >
-            Projetos
-          </Button>
-          <Button
-            variant="ghost"
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+          <button
             onClick={() => scrollToSection("contact")}
-            className="hover:text-primary transition-colors"
+            className="flex items-center gap-2 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 pl-5 pr-2 py-1.5 rounded-full text-sm font-medium hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors"
           >
             Contato
-          </Button>
-        </nav>
-
-        <ThemeToggle />
+            <div className="bg-white/20 dark:bg-black/10 p-1.5 rounded-full flex items-center justify-center">
+              <ArrowRight className="h-3.5 w-3.5" />
+            </div>
+          </button>
+        </div>
       </div>
     </header>
   );

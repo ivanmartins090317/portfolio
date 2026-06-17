@@ -1,149 +1,186 @@
 "use client";
 
 import {useState} from "react";
-import {Card} from "@/components/ui/card";
-import {Button} from "@/components/ui/button";
-import {Input} from "@/components/ui/input";
-import {Textarea} from "@/components/ui/textarea";
-import {Label} from "@/components/ui/label";
+import {ArrowUpRight, Mail, Phone, MapPin} from "lucide-react";
 import {toast} from "@/hooks/use-toast";
-import {Mail, User, Contact} from "lucide-react";
+
+interface ContactInfo {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+}
+
+const contactInfo: ContactInfo[] = [
+  {
+    icon: <Mail className="h-5 w-5" />,
+    label: "Email",
+    value: "ivanrbmartins@gmail.com"
+  },
+  {
+    icon: <Phone className="h-5 w-5" />,
+    label: "Telefone",
+    value: "+55 (13) 98140-0137"
+  },
+  {
+    icon: <MapPin className="h-5 w-5" />,
+    label: "Localização",
+    value: "Santos, São Paulo, Brasil"
+  }
+];
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
+  const [formData, setFormData] = useState({name: "", email: "", message: ""});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    // Simulate form submission
-    toast({
-      title: "Mensagem enviada!",
-      description: "Obrigado pelo contato. Responderei em breve!"
-    });
-
-    setFormData({name: "", email: "", message: ""});
+    setTimeout(() => {
+      toast({
+        title: "Mensagem enviada!",
+        description: "Obrigado pelo contato. Responderei em breve!"
+      });
+      setFormData({name: "", email: "", message: ""});
+      setIsSubmitting(false);
+    }, 600);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({...formData, [e.target.name]: e.target.value});
   };
 
   return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          {/* Contact Info */}
-          <div className="md:col-span-5 space-y-6">
-            <div>
-              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Vamos Trabalhar Juntos
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                Tem um projeto em mente? Vamos conversar sobre como posso ajudar a
-                transformar suas ideias em realidade.
-              </p>
-            </div>
+    <section id="contact" className="max-w-[1440px] mx-auto px-6 mb-32">
+      {/* Section Header */}
+      <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div>
+          <h2 className="text-6xl md:text-7xl font-semibold tracking-tight leading-none text-neutral-900 dark:text-white">
+            Vamos
+          </h2>
+          <h2 className="text-6xl md:text-7xl font-semibold tracking-tight leading-none text-neutral-900 dark:text-white mt-1">
+            Trabalhar Juntos
+          </h2>
+        </div>
+        <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 max-w-sm text-right">
+          Tem um projeto em mente? Vamos conversar sobre como posso transformar sua ideia
+          em realidade.
+        </p>
+      </div>
 
-            <div className="space-y-4">
-              <Card className="p-4 hover:scale-105 transition-transform duration-300">
-                <div className="flex items-center space-x-3">
-                  <div className="bg-blue-100 dark:bg-blue-900/30 p-2 rounded-lg">
-                    <Mail className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Email</h4>
-                    <p className="text-muted-foreground">ivanmartins.ilha@gmail.com</p>
-                  </div>
-                </div>
-              </Card>
+      {/* Contact Image Banner */}
+      <div className="w-full h-[300px] rounded-[2rem] overflow-hidden relative group mb-16">
+        <img
+          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=2000"
+          className="w-full h-full object-cover object-center"
+          alt="Desenvolvimento"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute bottom-8 left-8">
+          <h3 className="text-white text-3xl font-semibold mb-2">Conecte-se Comigo</h3>
+          <p className="text-white/80 max-w-md">
+            Disponível para freelance, projetos full-time ou consultorias técnicas —
+            nacional e internacional.
+          </p>
+        </div>
+      </div>
 
-              <Card className="p-4 hover:scale-105 transition-transform duration-300">
-                <div className="flex items-center space-x-3">
-                  <div className="bg-purple-100 dark:bg-purple-900/30 p-2 rounded-lg">
-                    <Contact className="h-5 w-5 text-purple-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Telefone</h4>
-                    <p className="text-muted-foreground">+55 (13) 98140-0137</p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-4 hover:scale-105 transition-transform duration-300">
-                <div className="flex items-center space-x-3">
-                  <div className="bg-green-100 dark:bg-green-900/30 p-2 rounded-lg">
-                    <User className="h-5 w-5 text-green-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Localização</h4>
-                    <p className="text-muted-foreground">Santos, São Paulo, Brasil</p>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <Card className="md:col-span-7 p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Nome</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Seu nome completo"
-                    required
-                    className="transition-all duration-300 focus:scale-105"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="seu@email.com"
-                    required
-                    className="transition-all duration-300 focus:scale-105"
-                  />
-                </div>
+      {/* Contact Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+        {/* Info Cards */}
+        <div className="md:col-span-4 space-y-4">
+          {contactInfo.map((item) => (
+            <div
+              key={item.label}
+              className="border border-neutral-200 dark:border-neutral-700 rounded-[1.5rem] p-5 bg-white dark:bg-neutral-900 flex items-center gap-4 hover:shadow-md transition-shadow"
+            >
+              <div className="bg-neutral-100 dark:bg-neutral-800 p-3 rounded-full text-neutral-700 dark:text-neutral-300 shrink-0">
+                {item.icon}
               </div>
+              <div>
+                <p className="text-xs text-neutral-400 uppercase tracking-wider mb-0.5">
+                  {item.label}
+                </p>
+                <p className="text-sm font-medium text-neutral-900 dark:text-white">
+                  {item.value}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
 
+        {/* Form */}
+        <div className="md:col-span-8 border border-neutral-200 dark:border-neutral-700 rounded-[2rem] p-8 bg-white dark:bg-neutral-900">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="message">Mensagem</Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
+                <label
+                  htmlFor="name"
+                  className="text-sm font-medium text-neutral-700 dark:text-neutral-300"
+                >
+                  Nome
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  value={formData.name}
                   onChange={handleChange}
-                  placeholder="Conte-me sobre seu projeto..."
-                  rows={6}
+                  placeholder="Seu nome completo"
                   required
-                  className="transition-all duration-300 focus:scale-105"
+                  className="w-full px-4 py-3 rounded-full border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 dark:focus:border-white transition-colors text-sm"
                 />
               </div>
+              <div className="space-y-2">
+                <label
+                  htmlFor="email"
+                  className="text-sm font-medium text-neutral-700 dark:text-neutral-300"
+                >
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="seu@email.com"
+                  required
+                  className="w-full px-4 py-3 rounded-full border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 dark:focus:border-white transition-colors text-sm"
+                />
+              </div>
+            </div>
 
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105"
+            <div className="space-y-2">
+              <label
+                htmlFor="message"
+                className="text-sm font-medium text-neutral-700 dark:text-neutral-300"
               >
-                Enviar Mensagem
-              </Button>
-            </form>
-          </Card>
+                Mensagem
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Conte-me sobre seu projeto..."
+                rows={6}
+                required
+                className="w-full px-4 py-3 rounded-[1.25rem] border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 dark:focus:border-white transition-colors text-sm resize-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="group flex items-center gap-3 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 pl-6 pr-2 py-2 rounded-full font-medium hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all disabled:opacity-60"
+            >
+              {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
+              <div className="bg-white/20 dark:bg-black/10 p-2 rounded-full group-hover:bg-white/30 dark:group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                <ArrowUpRight className="h-4 w-4" />
+              </div>
+            </button>
+          </form>
         </div>
       </div>
     </section>
