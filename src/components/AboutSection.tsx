@@ -12,12 +12,12 @@ export function AboutSection() {
       {/* Section Header */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-start">
         <div>
-          <h2 className="text-6xl md:text-7xl font-semibold tracking-tight leading-none mb-2 text-neutral-900 dark:text-white">
+          <h2 className="text-5xl md:text-7xl font-semibold tracking-tight leading-none mb-2 text-neutral-900 dark:text-white">
             Conheça o
           </h2>
-          <div className="flex items-center gap-4">
-            <Smile className="h-12 w-12 text-neutral-900 dark:text-white rotate-12 shrink-0" />
-            <h2 className="text-6xl md:text-7xl font-semibold tracking-tight leading-none text-neutral-900 dark:text-white">
+          <div className="flex items-center gap-3">
+            <Smile className="h-9 w-9 md:h-12 md:w-12 text-neutral-900 dark:text-white rotate-12 shrink-0" />
+            <h2 className="text-5xl md:text-7xl font-semibold tracking-tight leading-none text-neutral-900 dark:text-white">
               Desenvolvedor
             </h2>
           </div>
