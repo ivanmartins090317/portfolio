@@ -1,4 +1,5 @@
 import {ArrowRight} from "lucide-react";
+import CountUp from "@/animation/components/CountUp";
 
 const techList = [
   {label: "React", number: "01"},
@@ -13,8 +14,8 @@ const techList = [
 const stackItems = ["Projetos", "Frontend", "Backend", "APIs", "Cloud", "Mobile"];
 
 const stats = [
-  {badge: "01", value: "50+", label: "Projetos Concluídos"},
-  {badge: "02", value: "5+", label: "Anos de Experiência"}
+  {badge: "01", value: 50, label: "Projetos Concluídos"},
+  {badge: "02", value: 5, label: "Anos de Experiência"}
 ];
 
 export function HeroSection() {
@@ -120,7 +121,8 @@ export function HeroSection() {
                     {stat.badge}
                   </span>
                   <div className="text-4xl font-medium tracking-tight text-neutral-900 dark:text-white">
-                    {stat.value}
+                    <CountUp to={stat.value} duration={2} />
+                    <span>+</span>
                   </div>
                   <div className="text-sm font-medium text-neutral-500 mt-1">
                     {stat.label}
