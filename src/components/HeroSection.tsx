@@ -1,5 +1,6 @@
 import {ArrowRight} from "lucide-react";
 import CountUp from "@/animation/components/CountUp";
+import {AnimatedSpan, Terminal, TypingAnimation} from "@/components/ui/terminal";
 
 const techList = [
   {label: "React", number: "01"},
@@ -90,28 +91,31 @@ export function HeroSection() {
           {/* Left Stats Sidebar */}
           <div className="col-span-12 lg:col-span-2 flex flex-col gap-10">
             <div>
-              <h3 className="font-semibold text-lg leading-tight mb-4 text-neutral-900 dark:text-white">
+              {/* <h3 className="font-semibold text-lg leading-tight mb-4 text-neutral-900 dark:text-white">
                 Minhas
                 <br />
                 habilidades
-              </h3>
-              <div className="border border-neutral-200 dark:border-neutral-700 rounded-3xl p-5 bg-white dark:bg-neutral-900 shadow-sm relative overflow-hidden">
-                <ul className="space-y-3 text-sm text-neutral-400">
-                  {stackItems.map((item, i) => (
-                    <li
-                      key={item}
-                      className={
-                        i === 0 ? "text-neutral-900 dark:text-white font-medium" : ""
-                      }
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-700 text-xs text-neutral-500 leading-tight">
-                  Crie projetos, tecnologias e resultados reais.
-                </div>
-              </div>
+              </h3> */}
+              <Terminal className="max-h-none max-w-none rounded-3xl border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow-sm">
+                <TypingAnimation>&gt; minhas-habilidades --list</TypingAnimation>
+
+                {stackItems.map((item, i) => (
+                  <AnimatedSpan
+                    key={item}
+                    className={
+                      i === 0
+                        ? "text-neutral-900 dark:text-white font-medium"
+                        : "text-neutral-400"
+                    }
+                  >
+                    {item}
+                  </AnimatedSpan>
+                ))}
+
+                <TypingAnimation className="text-xs text-neutral-500 leading-tight">
+                  &gt; Crie projetos, tecnologias e resultados reais.
+                </TypingAnimation>
+              </Terminal>
             </div>
 
             <div className="space-y-6">
