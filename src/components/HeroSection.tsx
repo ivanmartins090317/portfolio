@@ -89,7 +89,7 @@ export function HeroSection() {
         {/* Hero Content Grid */}
         <div className="grid grid-cols-12 gap-6 items-end">
           {/* Left Stats Sidebar */}
-          <div className="col-span-12 lg:col-span-2 flex flex-col gap-10">
+          <div className="col-span-12 lg:col-span-4 flex flex-col gap-10">
             <div>
               {/* <h3 className="font-semibold text-lg leading-tight mb-4 text-neutral-900 dark:text-white">
                 Minhas
@@ -137,7 +137,7 @@ export function HeroSection() {
           </div>
 
           {/* Main Image */}
-          <div className="col-span-12 lg:col-span-10 relative">
+          <div className="col-span-12 lg:col-span-8 relative">
             <div className="w-full h-[500px] md:h-[600px] rounded-[2.5rem] overflow-hidden relative bg-neutral-100 dark:bg-neutral-800">
               <img
                 src="./preto_branco_02.jpeg"
