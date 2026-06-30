@@ -1,7 +1,6 @@
-"use client";
-
 import {useState} from "react";
 import {ArrowUpRight, Mail, Phone, MapPin} from "lucide-react";
+import {LiquidChrome} from "@/animation/components/LiquidChrome";
 import {toast} from "@/hooks/use-toast";
 
 interface ContactInfo {
@@ -68,17 +67,16 @@ export function ContactSection() {
         </p>
       </div>
 
-      {/* Contact Image Banner */}
+      {/* Contact Banner */}
       <div className="w-full h-[300px] rounded-[2rem] overflow-hidden relative group mb-16">
-        <img
-          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=2000"
-          className="w-full h-full object-cover object-center"
-          alt="Desenvolvimento"
+        <LiquidChrome className="absolute inset-0" interactive />
+        <div
+          className="absolute bottom-0 left-0 z-[1] w-full h-[100%] pointer-events-none bg-gradient-to-tr from-black/90 via-black/10 to-transparent"
+          aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute bottom-8 left-8">
+        <div className="absolute bottom-8 left-8 z-10">
           <h3 className="text-white text-3xl font-semibold mb-2">Conecte-se Comigo</h3>
-          <p className="text-white/80 max-w-md">
+          <p className="text-white/90 max-w-md">
             Disponível para freelance, projetos full-time ou consultorias técnicas —
             nacional e internacional.
           </p>
