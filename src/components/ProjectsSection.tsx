@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import {ArrowUpRight} from "lucide-react";
 
 interface Project {
   title: string;
@@ -14,16 +14,16 @@ const projects: Project[] = [
     description:
       "Plataforma de e-commerce com link direto para o WhatsApp do vendedor, facilitando a compra do produto.",
     technologies: ["React", "Node.js", "PostgreSQL", "Tailwind"],
-    image: "https://i.ibb.co/KjSPLYhd/projeto-reage-preview.png",
-    link: "https://reage-surfboard.vercel.app/",
+    image: "https://i.ibb.co/TxSH7tPv/card-jobs-02.png",
+    link: "https://reage-surfboard.vercel.app/"
   },
   {
-    title: "Surf Training Heat",
+    title: "App Apple X9 Localiza",
     description:
-      "Aplicativo para gerenciamento e avaliação de surfistas em competições ou baterias de surfe.",
+      "Aplicativo X9 LOCALIZA é uma solução criada para encontrar veículos com mais rapidez, precisão e eficiência no processo de busca.",
     technologies: ["Next.js", "TypeScript", "MongoDB", "Tailwind"],
-    image: "https://i.ibb.co/HThr14DL/projeto-surf-juiz-preview.png",
-    link: "https://juiz-surf-br.vercel.app/",
+    image: "https://i.ibb.co/27dH6FtM/card-jobs-04.png",
+    link: "https://apps.apple.com/br/app/x9-localiza/id6760557530"
   },
   {
     title: "Chat Surfboard Measure",
@@ -31,7 +31,7 @@ const projects: Project[] = [
       "Chat com IA para determinar o volume ideal de prancha com base no peso e altura do usuário.",
     technologies: ["React", "Chart.js", "Tailwind", "OpenAI"],
     image: "https://i.ibb.co/mCgwmPSK/tela-principal-chat-surfboardmeasure.png",
-    link: "https://surf-board-mesure.vercel.app/",
+    link: "https://surf-board-mesure.vercel.app/"
   },
   {
     title: "Landing Page Advogado",
@@ -39,19 +39,23 @@ const projects: Project[] = [
       "Landing page personalizada para advogados com sistema de mensagens e compartilhamento de mídia.",
     technologies: ["React", "Tailwind", "Shadcn", "TypeScript"],
     image: "https://i.ibb.co/jZRV9QFT/landing-page-moraes.png",
-    link: "https://advogado-moraes.vercel.app/",
+    link: "https://advogado-moraes.vercel.app/"
   },
+  {
+    title: "Gestor de alunos",
+    description:
+      "Gestor de alunos para escola de surf com sistema de gerenciamento de alunos, financeiro e materiais.",
+    technologies: ["React", "Tailwind", "Shadcn", "TypeScript"],
+    image: "https://i.ibb.co/HpkDTXnB/card-jobs-03.png",
+    link: "https://films-dutra-project.vercel.app/"
+  }
 ];
 
-function ProjectCard({
-  project,
-  className = "",
-}: {
-  project: Project;
-  className?: string;
-}) {
+function ProjectCard({project, className = ""}: {project: Project; className?: string}) {
   return (
-    <div className={`relative group rounded-[2rem] overflow-hidden bg-neutral-100 dark:bg-neutral-800 ${className}`}>
+    <div
+      className={`relative group rounded-[2rem] overflow-hidden bg-neutral-100 dark:bg-neutral-800 ${className}`}
+    >
       <img
         src={project.image}
         alt={project.title}
@@ -96,7 +100,8 @@ export function ProjectsSection() {
 
         <div className="flex flex-row md:flex-col items-center md:items-end justify-between md:justify-start gap-4">
           <p className="hidden md:block text-sm text-neutral-500 text-right max-w-xs">
-            Explore projetos desenvolvidos com tecnologias modernas e foco em resultado real.
+            Explore projetos desenvolvidos com tecnologias modernas e foco em resultado
+            real.
           </p>
           <a
             href="https://github.com/ivanmartins"
@@ -128,6 +133,7 @@ export function ProjectsSection() {
         {/* Col 3 */}
         <div className="space-y-6 flex flex-col">
           <ProjectCard project={projects[3]} className="h-[260px] md:h-[500px]" />
+          <ProjectCard project={projects[4]} className="h-[260px] md:h-[500px]" />
         </div>
       </div>
     </section>
